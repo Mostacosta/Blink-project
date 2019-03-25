@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+</head>
+<body>
+<div>
+    <img src="{{hero.image.url}}">
+    <h1>{{hero.title}}</h1>
+    <h1>{{hero.description}}</h1>
+    {% for project in projects %}
+    <img src="{{project.home_image.url}}">
+    <a href="{% url 'project_details' pk=project.pk %}"><h1>{{project.title}}</h1></a>
+    <h1>{{project.description}}</h1>
+    {% endfor %}
+</div>
+
+</body>
+</html>

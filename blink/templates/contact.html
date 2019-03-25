@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+{%load static%}
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Us</title>
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous">
+<link rel="stylesheet" href="{%static "css/animate.min.css"%}">
+  <link rel="stylesheet" href="{%static "css/style.css"%}">
+  <link rel="shortcut icon" type="image/png" href="{% static "images/favicon/favicon-16.png"%}' />
+
+  <!--[if lt IE 9]>
+    <script src="{% static "js/html5shiv.min.js"%}"></script>
+    <script src="{% static "js/respond.min.js"%}"></script>
+    <![endif]-->
+</head>
+
+<body>
+  <!-- Start Navbar -->
+  <header class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="index.html">
+        <img src="{% static "images/logo/blink-logo.png"%}" alt="blink-uae">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="navbarNavDropdown" class="navbar-collapse collapse">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'home'%}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'services'%}">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'strategy'%}">Strategy</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'philo'%}">Philosophy</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'contact'%}">Contact Us</a>
+            </li>
+          </ul>
+      </div>
+    </nav>
+  </header>
+  <!-- End Navbar -->
+
+  <!-- Start page title -->
+  <div class="page_title">
+    <div class="container">
+      <h2 class="text-center">Contact Us</h2>
+      <div class="title-line">
+        <div class="tl-1"></div>
+        <div class="tl-2"></div>
+        <div class="tl-3"></div>
+      </div>
+      <p class="text-center">Contact us lorem ipsum is a dummy text</p>
+    </div>
+    <div class="pg-titlee-divider">
+      <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" width="1920" height="217" viewBox="0 0 1920 217">
+        <g fill-rule="evenodd" transform="matrix(-1 0 0 1 1920 0)">
+          <path d="M0,57.46875 C203.364583,135.217754 494.835938,156.564108 874.414062,121.507813 C1192.61198,-13.9827666 1541.14063,-35.3291208 1920,57.46875 L1920,207 L0,207 L0,57.46875 Z"
+            opacity=".3"></path>
+          <path d="M0,79 C292.46875,165.453125 612.46875,165.453125 960,79 C1307.53125,-7.453125 1627.53125,-7.453125 1920,79 L1920,207 L0,207 L0,79 Z"
+            opacity=".6"></path>
+          <path d="M0,89 C288.713542,146.786458 608.713542,146.786458 960,89 C1311.28646,31.2135417 1631.28646,31.2135417 1920,89 L1920,217 L0,217 L0,89 Z"></path>
+        </g>
+      </svg>
+    </div>
+  </div>
+  <!-- End page title -->
+
+  <!-- Start our services -->
+  <section id="contact-us">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg contact-info">
+          <div class="single-info visit-us">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="info-content">
+              <h6>Visit us</h6>
+              <p>67, Dubai, United Arab Emirates</p>
+            </div>
+          </div>
+          <div class="single-info call-us">
+            <div class="contact-icon">
+              <i class="fas fa-mobile-alt"></i>
+            </div>
+            <div class="info-content">
+              <h6>Call us</h6>
+              <p>+001-987-274-3619</p>
+            </div>
+          </div>
+          <div class="single-info email-us">
+            <div class="contact-icon">
+              <i class="far fa-envelope"></i>
+            </div>  
+            <div class="info-content">
+              <h6>Email us</h6>
+              <p>info@blink.com</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg map-frame">
+          <div class="mapouter">
+            <div class="gmap_canvas">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6812.885532436394!2d54.4114604155156!3d24.433620372464965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x41f8fffb4b22fcc5!2sMushrif+Mall!5e1!3m2!1sen!2seg!4v1553385249321"
+                width="600" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>        
+      </div>
+    </div>
+  </section>
+
+  <!-- End our services -->
+
+  <!-- start footer -->
+  <section id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg">
+          <div class="left-footer">
+            <div class="social-links">
+              <ul>
+                <a href="#">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#">
+                  <i class="fab fa-behance"></i>
+                </a>
+              </ul>
+            </div>
+            <div class="intouch">
+              <p>Create your own story</p>
+              <a href="#">GET IN TOUCH</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg">
+          <div class="right-footer">
+            <p>All Right Reserved Copyright Blink Llc 2019©</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- End footer -->
+
+
+
+
+
+
+
+  <!-- start the script -->
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous">
+  </script>
+  <script src="js/wow.min.js"></script>
+  <script>
+    new WOW().init();
+  </script>
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>

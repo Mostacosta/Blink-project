@@ -1,0 +1,11 @@
+@media (min-width: 1200px) {
+  /*our works*/
+  #ourworks .project-bg {
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 550px; }
+  #ourworks .project-desc {
+    padding: 100px; } }
+
+/*# sourceMappingURL=responsive.css.map */

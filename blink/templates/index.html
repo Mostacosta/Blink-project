@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+{%load static%}
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blink</title>
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="{%static "css/animate.min.css"%}">
+  <link rel="stylesheet" href="{%static "css/style.css"%}">
+  <link rel="shortcut icon" type="image/png" href="{% static "images/favicon/favicon-16.png"%}' />
+
+  <!--[if lt IE 9]>
+    <script src="{% static "js/html5shiv.min.js"%}"></script>
+    <script src="{% static "js/respond.min.js"%}"></script>
+    <![endif]-->
+</head>
+
+<body>
+  <!-- Start Navbar -->
+  <header class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="#">
+        <img src= "{%static "images/logo/blink-logo.png"%}" alt="blink-uae">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="navbarNavDropdown" class="navbar-collapse collapse">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'home'%}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'services'%}">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'strategy'%}">Strategy</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'philo'%}">Philosophy</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="{% url 'contact'%}">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <!-- End Navbar -->
+
+  <!-- Start Hero section -->
+  <section id="hero-sec">
+    <div class="">
+      <div class="">
+        <div class="hero-bg" style="background-image: url({{hero.image.url}});">
+          <div class="hero-caption row">
+            <h2 class="h1 col-lg">{{firstword}}<br>{{restword}}</h2>
+            <p class="col-lg">{{hero.description}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- End Hero section -->
+
+  <!-- Start our works -->
+  <section id="ourworks">
+    {%for project,color in zip%}
+    <div class="row mg0">
+      <div class="col-lg pd0">
+        <div class="project-bg" style="background-image: url({{project.home_image.url}});"></div>
+      </div>
+      <div class="col-lg pd0 arrow {{color}}">
+        <div class="project-desc">
+          {% ifequal color "bg-white" %}
+          <div class="project-title">
+            <h2 class="h1">{{project.title}}</h2>
+          </div>
+          <div class="project-caption">
+            <h4>{{project.sub_title}}</h4>
+            <p>{{project.description}}</p>
+            <a href="{% url 'project_details' pk=project.pk %}" class="btn btn-hover dark">view the project</a>
+          </div>
+          {% else %}
+          <div class="project-title">
+            <h2 class="h1 wht">{{project.title}}</h2>
+          </div>
+          <div class="project-caption">
+            <h4 class="wht">{{project.sub_title}}</h4>
+            <p class="wht">{{project.description}}</p>
+            <a href="{% url 'project_details' pk=project.pk %}" class="btn btn-hover wht">view the project</a>
+          </div>
+          {% endifequal %}
+        </div>
+      </div>
+    </div>
+    {%endfor%}
+    <!--<div class="row mg0">-->
+      <!--<div class="col-lg pd0 bg-yellow">-->
+        <!--<div class="project-desc wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.25s">-->
+          <!--<div class="project-title">-->
+            <!--<h2 class="h1 wht">branding<br>design</h2>-->
+          <!--</div>-->
+          <!--<div class="project-caption">-->
+            <!--<h4 class="wht">Our process of telling this story</h4>-->
+            <!--<p class="wht">An experienced team of brand, design and communication practitioners with a history of delivery and a-->
+              <!--vision for the future role that brands will play in business and society.</p>-->
+            <!--<a class="wht btn btn-hover" href="#">view the project</a>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<div class="col-lg pd0">-->
+        <!--<div class="project-bg" style="background-image: url(images/our-works/Aabar.jpg);"></div>-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--<div class="row mg0">-->
+      <!--<div class="col-lg pd0">-->
+        <!--<div class="project-bg" style="background-image: url(images/our-works/ADCapital.jpg);"></div>-->
+      <!--</div>-->
+      <!--<div class="col-lg pd0 bg-orange">-->
+        <!--<div class="project-desc wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.25s">-->
+          <!--<div class="project-title">-->
+            <!--<h2 class="h1 wht">branding<br>design</h2>-->
+          <!--</div>-->
+          <!--<div class="project-caption">-->
+            <!--<h4 class="wht">Our process of telling this story</h4>-->
+            <!--<p class="wht">An experienced team of brand, design and communication practitioners with a history of delivery and a-->
+              <!--vision for the future role that brands will play in business and society.</p>-->
+            <!--<a class="wht btn btn-hover" href="#">view the project</a>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--<div class="row mg0">-->
+      <!--<div class="col-lg pd0 bg-blue">-->
+        <!--<div class="project-desc wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.25s">-->
+          <!--<div class="project-title">-->
+            <!--<h2 class="h1 wht">branding<br>design</h2>-->
+          <!--</div>-->
+          <!--<div class="project-caption">-->
+            <!--<h4 class="wht">Our process of telling this story</h4>-->
+            <!--<p class="wht">An experienced team of brand, design and communication practitioners with a history of delivery and a-->
+              <!--vision for the future role that brands will play in business and society.</p>-->
+            <!--<a class="wht btn btn-hover" href="#">view the project</a>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<div class="col-lg pd0">-->
+        <!--<div class="project-bg" style="background-image: url(images/our-works/ADUni.jpg);"></div>-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--<div class="row mg0">-->
+      <!--<div class="col-lg pd0">-->
+        <!--<div class="project-bg" style="background-image: url(images/our-works/Medeor.jpg);"></div>-->
+      <!--</div>-->
+      <!--<div class="col-lg pd0 bg-black">-->
+        <!--<div class="project-desc wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.25s">-->
+          <!--<div class="project-title">-->
+            <!--<h2 class="h1 wht">branding<br>design</h2>-->
+          <!--</div>-->
+          <!--<div class="project-caption">-->
+            <!--<h4 class="wht">Our process of telling this story</h4>-->
+            <!--<p class="wht">An experienced team of brand, design and communication practitioners with a history of delivery and a-->
+              <!--vision for the future role that brands will play in business and society.</p>-->
+            <!--<a class="wht btn btn-hover" href="#">view the project</a>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--<div class="row mg0">-->
+      <!--<div class="col-lg pd0">-->
+        <!--<div class="project-desc wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.25s">-->
+          <!--<div class="project-title">-->
+            <!--<h2 class="h1">branding<br>design</h2>-->
+          <!--</div>-->
+          <!--<div class="project-caption">-->
+            <!--<h4>Our process of telling this story</h4>-->
+            <!--<p>An experienced team of brand, design and communication practitioners with a history of delivery and a-->
+              <!--vision for the future role that brands will play in business and society.</p>-->
+            <!--<a href="#" class="btn btn-hover dark">view the project</a>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<div class="col-lg pd0">-->
+        <!--<div class="project-bg" style="background-image: url(images/our-works/dippers.jpg);"></div>-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--<div class="row mg0">-->
+      <!--<div class="col-lg pd0">-->
+        <!--<div class="project-bg" style="background-image: url(images/our-works/dolce.jpg);"></div>-->
+      <!--</div>-->
+      <!--<div class="col-lg pd0 bg-mauve">-->
+        <!--<div class="project-desc wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.25s">-->
+          <!--<div class="project-title">-->
+            <!--<h2 class="h1 wht">branding<br>design</h2>-->
+          <!--</div>-->
+          <!--<div class="project-caption">-->
+            <!--<h4 class="wht">Our process of telling this story</h4>-->
+            <!--<p class="wht">An experienced team of brand, design and communication practitioners with a history of delivery and a-->
+              <!--vision for the future role that brands will play in business and society.</p>-->
+            <!--<a class="wht btn btn-hover" href="#">view the project</a>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--<div class="row mg0">-->
+      <!--<div class="col-lg pd0">-->
+        <!--<div class="project-desc wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.25s">-->
+          <!--<div class="project-title">-->
+            <!--<h2 class="h1">branding<br>design</h2>-->
+          <!--</div>-->
+          <!--<div class="project-caption">-->
+            <!--<h4>Our process of telling this story</h4>-->
+            <!--<p>An experienced team of brand, design and communication practitioners with a history of delivery and a-->
+              <!--vision for the future role that brands will play in business and society.</p>-->
+            <!--<a href="#" class="btn btn-hover dark">view the project</a>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<div class="col-lg pd0">-->
+        <!--<div class="project-bg" style="background-image: url(images/our-works/FOH.jpg);"></div>-->
+      <!--</div>-->
+    <!--</div>-->
+    <div class="more-stories">
+      <a href="#" class="btn btn-hover dark">View More Stories</a>
+    </div>
+  </section>
+
+  <!-- End our works -->
+
+  <!-- start footer -->
+  <section id="footer">
+    <div class="container">
+      <div class="row">
+          <div class="col-lg">
+            <div class="left-footer">
+              <div class="social-links">
+                <ul>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#"><i class="fab fa-behance"></i></a>
+                </ul>
+              </div>
+              <div class="intouch">
+                <p>Create your own story</p>
+                <a href="#">GET IN TOUCH</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg">
+              <div class="right-footer">
+                <p>All Right Reserved Copyright Blink Llc 2019©</p>
+              </div>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- End footer -->
+
+
+
+
+
+
+
+  <!-- start the script -->
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script type="text/javascript" src="{% static "js/wow.min.js" %}"></script>
+  <script>
+  new WOW().init();
+  </script>
+  <script type="text/javascript" src="{% static "js/main.js" %}"></script>
+
+</body>
+</html>
