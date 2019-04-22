@@ -99,7 +99,7 @@
             </ol>
             <div class="carousel-inner">
               {%for img in images%}
-              {%if forloop.first %}
+              {%if img.pk == 1%}
               <div class="carousel-item active">
                 <img class="d-block w-100" src="{{img.image.url}}" alt="First slide">
               </div>
